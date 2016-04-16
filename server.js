@@ -17,7 +17,7 @@ app.get('/:query', (req, res) => {
       return;
     }
     const collection = db.collection('pages')
-    collection.find({ "short": `https://intense-crag-68900.herokuapp.com/${req.params.query}` })
+    collection.find({ "short": `https://url-shortener-llamatarianism.c9users.io/${req.params.query}` })
     .toArray((err, data) => {
       if (err) {
         console.log(err);
@@ -50,7 +50,7 @@ app.get(/\/new\/(http(s)?:\/\/){1}(www\.)?(.+)(\.com)+/i, (req, res) => {
     
     const jsonResponse = {
       "long": requestUrl,
-      "short": `https://intense-crag-68900.herokuapp.com/${randString}`
+      "short": `https://url-shortener-llamatarianism.c9users.io/${randString}`
     };
     res.json(jsonResponse);
     collection.insert(jsonResponse);
